@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Опрос</title>
-  <script type="module" crossorigin src="./assets/main-785bbe91.js"></script>
-  <link rel="stylesheet" href="./assets/style-4f31c99a.css">
-  <link rel="stylesheet" href="./assets/index-8ff95921.css">
+  <script type="module" crossorigin src="./assets/main-c508f9c3.js"></script>
+  <link rel="stylesheet" href="./assets/index-59fcf07e.css">
 </head>
 
 <body>
@@ -348,29 +347,32 @@
                 <div class="form__grid">
                     <div class="box-required-input">
                         <input type="text" name="name" pattern="[а-яА-ЯёЁ]+\s?[а-яА-ЯёЁ]+" placeholder="ФИО"
-                               class="form__input required-input form-name-input" required>
+                               class="form__input form-name-input" required>
                         <span class="name_error form_error"></span>
                     </div>
                     <div class="box-required-input">
                         <input type="tel" name="phone" pattern="[^\.]{16}" placeholder="Телефон"
-                               class="form__input required-input form-tel-input" required>
+                               class="form__input form-tel-input" required>
                         <span class="tel_error form_error"></span>
                     </div>
-                    <div>
-                        <input type="email" name="email" placeholder="E-mail" class="form__input form-email-input">
+                    <div class="box-required-input">
+                        <input type="email" name="email" pattern="^[^а-яё]+$" placeholder="E-mail" class="form__input form-email-input">
+                        <span class="email_error form_error"></span>
                     </div>
-                    <div>
-                        <input type="text" name="flat-number" placeholder="Номер квартиры"
+                    <div class="box-required-input">
+                        <input type="text" name="flat-number" pattern="\d{1,4}" placeholder="Номер квартиры"
                                class="form__input form-number-input">
+                        <span class="flat-number_error form_error"></span>
                     </div>
-                    <div class="form__input_big">
-                    <textarea name="opinion" placeholder="Мнение по проекту благоустройства"
-                              class="form__input form__textarea"></textarea>
+                    <div class="form__input_big box-required-input">
+                        <textarea name="opinion" placeholder="Поле обязательно для заполнения. Оставьте ваше мнение, комментарий или  предложение по предлагаемому варианту реконструкции и благоустройства дворовой территории вашего дома"
+                              class="form__input form__textarea" required></textarea>
+                        <span class="opinion_error form_error"></span>
                     </div>
                     <div class="box-required-input approval-input">
                         <div class="approval">
                             <input type="checkbox" name="agree" id="agree"
-                                   class="checkbox__approval form__input required-input"
+                                   class="checkbox__approval form__input"
                                    required>
                             <label for="agree" class="label__approval">
                                 <span>Согласие на обработку персональных данных</span>
@@ -380,8 +382,11 @@
                     </div>
                     <button class="form__btn" type="submit">Отправить</button>
                 </div>
+                <div class="error error-hidden">
+                    <p class="subtitle ">Что-то пошло не так</p>
+                </div>
             </form>
-            <div class="sent">
+            <div class="success success-hidden">
                 <p class="subtitle">Спасибо. Ваша заявка принята. Наши специалисты свяжутся с Вами в ближайшее
                     время.</p>
             </div>
